@@ -19,7 +19,7 @@ const Search = () => {
   // console.log(characters)
 
   return (
-    <div className="search_container">
+    <div className="search-container">
       {characters
         ? (<Characters characters={characters} setCharacters={setCharacters} />)
         : (

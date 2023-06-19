@@ -7,39 +7,49 @@ const Characters = (props) => {
   }
 
   return (
-    <div className="main_container">
-      <h1>Characters</h1>
-      <span className="btn-home" onClick={resetCharacters}>Back home</span>
-
-      <div className="characters-container">
-        {characters.map((character, id) => (
-          <div className="character-card" key={id}>
-            <img src={character.image} alt={character.name} className="card-img" />
-            <div className="card-body">
-              <h3 className="character-name">{character.name}</h3>
+    <div className="characters">
+      <h1>Personajes</h1>
+      <span className="back-home" onClick={resetCharacters}>
+        Back home
+      </span>
+      <div className="container-characters">
+        {characters.map((character, index) => (
+          <div className="character-container" key={index}>
+            <div>
+              <img src={character.image} alt={character.name} />
+            </div>
+            <div>
+              <h3>{character.name}</h3>
               <h6>
-                {character.status === 'Alive' ? (
+                {character.status === "Alive" ? (
                   <>
-                    <span className="alive">Alive</span>
+                    <span className="alive" />
+                    Alive
                   </>
                 ) : (
                   <>
-                    <span className="dead">Dead</span>
+                    <span className="dead" />
+                    Dead
                   </>
                 )}
               </h6>
-              <p className="episode">
-                <span>Episodes:</span>
+              <p>
+                <span className="text-grey">Episodios: </span>
                 <span>{character.episode.length}</span>
               </p>
-              <p className="character-specie">{character.species}</p>
+              <p>
+                <span className="text-grey">Especie: </span>
+                <span>{character.species}</span>
+              </p>
             </div>
           </div>
         ))}
       </div>
-      <span className="btn-home" onClick={resetCharacters}>Back home</span>
+      <span className="back-home" onClick={resetCharacters}>
+        Back home
+      </span>
     </div>
-  )
+  );
 }
 
 export default Characters
