@@ -1,6 +1,6 @@
 const Characters = (props) => {
-  const { characters, setCharacters } = props
-  console.log(characters)
+  const { characters, setCharacters, nextPage, prevPage, reset } = props
+  // console.log(characters)
 
   const resetCharacters = () => {
     setCharacters(null)
@@ -12,6 +12,18 @@ const Characters = (props) => {
       <span className="back-home" onClick={resetCharacters}>
         Back home
       </span>
+      <div className="pagination">
+        <button onClick={prevPage} className="pagination-button">
+          Previous
+        </button>
+        <button onClick={nextPage} className="pagination-button">
+          Next
+        </button>
+        <button onClick={reset} className="pagination-button">
+          reset
+        </button>
+      </div>
+
       <div className="container-characters">
         {characters.map((character, index) => (
           <div className="character-container" key={index}>
@@ -48,6 +60,18 @@ const Characters = (props) => {
       <span className="back-home" onClick={resetCharacters}>
         Back home
       </span>
+
+      <div className="pagination">
+        <button onClick={prevPage} className="pagination-button">
+          Previous
+        </button>
+        <button onClick={nextPage} className="pagination-button">
+          Next
+        </button>
+        <button onClick={reset} className="pagination-button">
+          reset
+        </button>
+      </div>
     </div>
   );
 }
